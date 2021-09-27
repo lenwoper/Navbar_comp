@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* header csss */
+        #header {
+            position: relative;
+        }
+
+        #header .header_container {
+            line-height: 40px;
+            height: 40px;
+            width: 100%;
+            background-color: blueviolet;
+        }
+
+        #header .header_container div {
+            float: left;
+
+            background-color: blueviolet;
+        }
+
+        #header .header_container .left {
+            width: 15%;
+            overflow: hidden;
+            height: 40px;
+            background-color: black;
+            
+        }
+        #header .header_container .left  #iconHolder{
+            position: relative;
+        }
+        #header .header_container .left  #iconHolder img{
+          
+        }
+
+        #header .header_container .middle {
+            width: 70%;
+
+            background-color: black;
+            overflow: auto;
+            text-align: center;
+            white-space: nowrap;
+            overflow-y: hidden;
+
+
+            height: 40px;
+            background-color: rgb(3, 3, 3);
+        }
+
+        #header .header_container .middle li {
+            /* float: left; */
+            display: inline-block;
+            width: 90px;
+            /* margin-top: 3px; */
+            /*margin-bottom: 7px;
+
+           */
+            line-height: 30px;
+            margin-left: 6px;
+            margin-right: 6px;
+            border-radius: 5px;
+            white-space: nowrap;
+            box-shadow: inset 0 0 2px #c0c0c0b8;
+            cursor: pointer;
+            color: white;
+            background-color: black;
+        }
+        #header .header_container .middle li:hover{
+            background-color: #c0c0c02d;
+        }
+
+
+        #header .header_container .middle::-webkit-scrollbar {
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: inset 0 0 3px #63626200;
+            height: 4px;
+        }
+
+        #header .header_container:hover .middle::-webkit-scrollbar {
+            background-color: rgba(255, 255, 255, 0);
+            box-shadow: inset 0 0 3px #636262a3;
+            height: 4px;
+        }
+
+        #header .header_container .middle::-webkit-scrollbar-thumb {
+            background-color: #1b1a1a00;
+        }
+
+        #header .header_container:hover>.middle::-webkit-scrollbar-thumb {
+            background-color: #514e4ec1;
+        }
+
+        #header .header_container .right {
+            width: 15%;
+            background-color: black;
+        }
+
+        /* form css */
+
+      #header  #form{
+          line-height: 40px;
+          width: 100%;
+          text-align: center;
+          background-color: black;
+          position: absolute;
+          top: 0px;
+          display: none;
+          cursor: pointer;
+      }
+
+        #header .header_container .right #menu {
+            margin-right: 13px;
+            color: white;
+            display: none;
+            float: right;
+        }
+
+        #header .header_container .right #search {
+            margin-left: 120px;
+            cursor: pointer;
+            
+transition: all, 0.2s ease-in-out;
+            color: white;
+            float: left;
+
+        }
+        #header .header_container .right #search:hover{
+          font-weight: bolder;
+          transform: scale(1.2);
+
+        }
+        #form input[type="search"]{
+            width: 60%;
+
+        }
+      #form button ,  input {
+            border: none;
+            padding: 5px 2px 5px 2px ;
+        
+           
+
+        }
+        #form button:hover{
+            background-color: #c2bfbfbf; 
+        }
+        #form input[type="submit"]{
+            margin-left: -4px;
+            padding-right: 3px;
+        }
+    
+        #form input[type="submit"]:hover{
+            background-color: #c2bfbfbf;
+        }
+        .act{
+            position: fixed;
+            top: 0px;
+            transition: all, 0.8s ease-in-out;
+            width: 100%;
+            height: auto;
+        }
+        /* 
+            #form button ,  input {
+            border: none;
+            padding: 2px 2px 2px 2px ;
+        
+           
+
+        }
+        #form input[type="submit"]{
+            margin-left: -4px;
+            padding-right: 2px;
+        }
+        
+        
+        */
+
+        /* mobile and tabs css for responsive */
+        @media screen and (max-width:578px) {
+
+            #header .header_container .middle {
+                position: absolute;
+                right: 0px;
+                top: 40px;
+               
+
+                overflow-x: hidden;
+
+                overflow-y: scroll;
+                height: 100vh;
+           
+
+
+            }
+            #header .header_container   #middle{
+                width: 0%;
+                transition: all, 0.3s ease-in-out;
+                opacity: 0.84;
+            }
+            #header .header_container .middle::-webkit-scrollbar {
+                width: 3px;
+            }
+
+            #header .header_container .middle::-webkit-scrollbar-thumb {
+                background-color: rgba(93, 92, 92, 0.626);
+            }
+
+            #header .header_container .middle li {
+                width: 70%;
+                display: block;
+                line-height: 35px;
+                margin-left: 15%;
+                margin-right: 15%;
+                float: none;
+                white-space: normal;
+                margin-top: 6px;
+                margin-bottom: 6px
+            }
+
+            /* left right */
+            #header .header_container .left {
+                width: 50%;
+            }
+
+            #header .header_container .right {
+                width: 50%;
+
+            }
+
+            #header .header_container .right #menu {
+                margin-right: 13px;
+                font-weight: bold;
+                transition: all, 0.3s ease-in-out;
+                color: white;
+                display: block;
+            }
+            #header .header_container .right #menu:hover{
+                transform: scale(1.2);
+            }
+            #header .header_container .right #search {
+            margin-left: 80px;
+            color: white;
+            float: left;
+
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header_holder">
+    <div class="header" id="header">
+        <div class="header_container">
+            <!-- left relative -->
+            <div class="left"><img src="navbar image.jpg" style="width: 100px;  z-index: 3; height:35px;" alt="" srcset=""> </div>
+            <!-- middle part for holding ling  -->
+
+            <div class="middle" id="middle">
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+                <li>Home</li>
+            </div>
+
+            <div class="right" id="right"> <span id="search"> <i class="fa fa-search" aria-hidden="true"></i></span><span id="menu">&#9776;</span></div>
+
+        </div>
+      
+        <form action="" method="" id="form"> <span><input type="search" placeholder="Search.." required value="" name="search"></span> <input type="submit" value="OK"> <button id="formHide">HIDE</button></form>
+    </div>
+</div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum amet libero facilis optio et, sed dicta odit,
+    exercitationem aspernatur eveniet vero iusto, similique ut autem. Assumenda, autem. Harum quas minus esse minima
+    assumenda ullam sit libero odit tenetur nisi, vitae provident doloremque! Vel aspernatur ipsum odio placeat beatae
+    omnis magni amet repudiandae commodi ut. Et aliquam maxime eius error beatae dignissimos, distinctio unde non quasi,
+    repellat hic impedit excepturi aperiam enim expedita ex perferendis ad quia commodi, molestiae modi laudantium.
+    Saepe veritatis sequi adipisci maiores laboriosam molestiae harum quas ducimus id vitae in iure molestias soluta
+    distinctio nesciunt amet odit at quam, ipsum veniam officia, dolorum maxime. Quos consequatur assumenda quia
+    reiciendis vero accusamus repudiandae modi aliquid voluptates velit corrupti, ipsam voluptatum nesciunt, quo cum sed
+    tenetur a nisi magni est veniam provident. Eveniet cumque, culpa minima possimus similique mollitia aliquid tempora
+    iste minus perferendis sequi voluptates fugit, temporibus ipsam. Quasi amet adipisci excepturi aperiam optio
+    doloribus autem culpa reiciendis totam veritatis perspiciatis, assumenda non tempora dolorum ea placeat ex odio aut
+    temporibus nostrum illum minus. Unde accusamus aut distinctio architecto, nihil ducimus dolore at, corrupti possimus
+    eveniet rem amet exercitationem facere dolorem repellendus nemo maiores quasi? Ex, enim beatae!
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut delectus tempore ea aspernatur molestiae. Consequatur voluptates autem molestiae velit, quas assumenda, sequi repellendus adipisci nisi corporis nulla voluptas! Necessitatibus suscipit exercitationem fugiat est. Voluptatum maiores, ea voluptate iure eaque, officia voluptates eos amet, cupiditate vero odit maxime culpa saepe vitae possimus unde excepturi est expedita libero voluptatem ut quo. Ratione assumenda velit eum minus. Laborum, deserunt. Totam esse aliquam sapiente culpa molestias a eveniet inventore omnis tempore. Cupiditate qui libero accusantium. Eos autem beatae iusto dicta porro praesentium quae explicabo harum, laboriosam, laborum tempore expedita nostrum, blanditiis fuga quasi perspiciatis sapiente unde. Iusto blanditiis ipsam repellendus quos laborum sapiente. Cumque qui, consequatur sit blanditiis suscipit totam nulla eius ex. Iure ex voluptate autem nemo eum temporibus ut architecto, debitis dolorum aspernatur obcaecati fuga, maxime delectus omnis accusantium placeat assumenda! Est repellendus culpa pariatur ratione dolorum at debitis autem consequuntur dolor nesciunt corporis dolorem dicta natus nisi tenetur recusandae veritatis cupiditate, cumque corrupti eligendi! Non velit aliquid similique ratione aut consectetur beatae unde, minus, maxime cum debitis optio modi! Laboriosam, illum. Eligendi placeat ab officia perspiciatis nostrum molestias quo ratione minima praesentium necessitatibus suscipit harum, optio accusamus beatae hic laborum voluptas ipsa minus blanditiis dicta distinctio. Labore officia, blanditiis eligendi perspiciatis dolores maxime quia magnam? Reprehenderit, accusamus ex sequi, quibusdam sit recusandae, ratione libero quas commodi est architecto minus culpa quisquam odit! Id praesentium quidem officia repellendus ullam quia quas repellat nulla quod culpa ad vel cupiditate laboriosam, hic eos iure nobis est dolorum placeat rerum eum dolores. Aspernatur quo sequi non, quos at eos eveniet ad quae saepe, id expedita modi distinctio, libero hic. Magni ipsum aspernatur fugit dolor accusantium voluptatum enim quidem? Repellat, facere molestias sit minus sint in reprehenderit consectetur accusamus a. Dignissimos modi exercitationem ipsum ipsam iusto?
+</body>
+
+<script src="navabar.js"></script>
+
+</html>
